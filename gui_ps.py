@@ -28,7 +28,9 @@ else:
      all_passwords = get_all_passwords()
 #
 #print(password)
-
+if all_passwords == []:
+    all_passwords = ['1']
+    
 class App:
     def __init__(self, root):
         #setting title

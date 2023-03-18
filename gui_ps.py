@@ -36,11 +36,9 @@ class App:
         #setting title
         root.title("Password Storage")
         #setting window size
-        width=632
-        height=339
-        screenwidth = root.winfo_screenwidth()
-        screenheight = root.winfo_screenheight()
-        alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
+        width=root.winfo_screenwidth()
+        height=root.winfo_screenheight()
+        alignstr = '%dx%d' % (width, height)
         root.geometry(alignstr)
         root.resizable(width=False, height=False)
 
@@ -58,12 +56,12 @@ class App:
             global GLabel_624
             GLabel_624=tk.Label(root)
             GLabel_624["text"] = [x[2] for x in all_passwords if x[0]==options.get()]
-            GLabel_624.place(x=80,y=150,width=363,height=30)
+            GLabel_624.place(x=80,y=150,width=1000,height=30)
 
             global GLabel_908
             GLabel_908=tk.Label(root)
             GLabel_908["text"] = [x[1] for x in all_passwords if x[0]==options.get()]
-            GLabel_908.place(x=80,y=110,width=363,height=30)
+            GLabel_908.place(x=80,y=110,width=1000,height=30)
 
         secs = [x[0] for x in all_passwords]
         GListBox_504=tk.OptionMenu(root, options, *secs, command=on_option_change)
